@@ -13,7 +13,7 @@ export default function Speakers() {
       {/* <p className="">
         Revealing Soon...
       </p>  */}
-      <Card name="Aman Tiwari" role="Developer"/>
+      <Card name="Muskan Mogre" role="Presenter"/>
     </div>
   );
 }

@@ -7,6 +7,17 @@ import Modal from "@mui/material/Modal";
 // import { styled } from "@mui/material/styles";
 // import Paper from "@mui/material/Paper";
 import { GiCancel } from "react-icons/gi";
+import Accordion from "@mui/material/Accordion";
+import AccordionActions from "@mui/material/AccordionActions";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Button from "@mui/material/Button";
+import { BorderAll } from "@mui/icons-material";
+import { BiFontColor } from "react-icons/bi";
+import { color } from "d3";
+import { ImTextColor } from "react-icons/im";
+
 const style = {
   position: "absolute",
 
@@ -41,6 +52,17 @@ const largeStyle = {
   p: 4,
 };
 
+const Accordion_style = {
+  backgroundColor:"inherit",
+  border:"none",
+  width:"90%",
+  borderRadius:"100%",
+  color:"white",
+  boxShadow:"none",
+  
+  
+};
+ 
 // const Item = styled(Paper)(({ theme }) => ({
 //   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
 //   ...theme.typography.body2,
@@ -53,7 +75,7 @@ export default function Schedule() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+ 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
       <button
@@ -91,17 +113,30 @@ export default function Schedule() {
 
             <div className="w-12/12 md:w-7/12 lg:6/12 mx-auto relative ">
               <div className="border-l-2 border-[var(--font-clr)] mt-10">
-                <div className="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-[#EA4335] border-2 border-[#EA4335] bg-opacity-40 rounded md:rounded-full mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
+                <div className="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-[#5d1914] border-2 border-[#EA4335]  rounded md:rounded-full mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
                   <div className="w-5 h-5 bg-[#4285F4] absolute -left-10 transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
 
                   <div className="w-10 h-1 bg-[#4285F4] absolute -left-10 z-0"></div>
 
-                  <div className="flex-auto">
-                    <h1 className="text-lg">09:30 a.m. – 10:30 a.m</h1>
-                    <h1 className="text-xl font-bold">
-                      Registration and Kickoff
-                    </h1>
-                  </div>
+                  <Accordion sx={Accordion_style}>
+                    <div className="flex-auto">
+                      <h1 className="text-lg">09:30 a.m. – 10:30 a.m</h1>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1-content"
+                        id="panel1-header"
+                      >
+                        <h1 className="text-xl font-bold">
+                          Registration and Kickoff
+                        </h1>
+                      </AccordionSummary>
+                    </div>
+                    <AccordionDetails>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Suspendisse malesuada lacus ex, sit amet blandit leo
+                      lobortis eget.
+                    </AccordionDetails>
+                  </Accordion>
                 </div>
 
                 <div className="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-[#4285F4] border-2 border-[#4285F4] bg-opacity-40 rounded md:rounded-full rounded mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
